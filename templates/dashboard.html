@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Vulnerability Dashboard</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    .row.content {height: 550px}
+    .sidenav {
+      background-color: #2E2E3E;
+      height: 100%;
+      color: #FFFFFF;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      display: block;
+    }
+    .sidenav:hover {
+      transform: scale(1.05);
+      text-decoration: none;
+    }
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+    body {
+      background-color: #1E1E2F;
+      color: #FFFFFF;
+      font-family: 'Roboto', sans-serif;
+    }
+    .logo {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 100px;
+    }
+    .widget-tile {
+      border: none;
+      padding: 20px;
+      margin-bottom: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: pointer;
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      color: inherit;
+      border-radius: 10px;
+      background: #2E2E3E;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .widget-tile:hover {
+      transform: scale(1.05);
+      text-decoration: none;
+    }
+    .value {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .col-md-4 {
+      flex: 1 1 calc(50% - 20px);
+      margin: 10px;
+      max-width: calc(50% - 20px);
+    }
+    .container-fluid {
+      padding-top: 150px;
+    }
+  </style>
+</head>
+<body>
+
+<img src="https://th.bing.com/th/id/R.c8b465eb898fa6116e6cbc49eb71fe76?rik=PfN1TsQmGrQNRg&riu=http%3a%2f%2fwww.newdesignfile.com%2fpostpic%2f2011%2f12%2flogo-ups-united-parcel-service_55106.jpg&ehk=X%2b6L9kGez%2bbJZSvMJmbbm9UstoquF%2b8jLXSu5JtUu%2fU%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="UPS Logo" class="logo">
+
+<div class="container-fluid">
+  <div class="row content">
+    
+    <div class="col-sm-4 col-md-3">
+      <a href="/dashboard2" class="sidenav">
+        <h2>Total Vulnerabilities</h2>
+        <h4>21551</h4>
+       <!-- <div class="value">{{ fullvulcount }}</div>-->
+        <div id="graph-container">
+          {{ total_graph | safe }}
+        </div>
+      </a>
+    </div>
+    
+    <div class="col-sm-8 col-md-9">
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <a href="/windows" class="widget-tile">
+            <div>
+              <h3>Windows Vulnerabilities</h3>
+        
+               <h2>14504</h2><h4>vulnerabilities</h4>
+              <div class="value"></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 mb-4">
+          <a href="security" class="widget-tile">
+            <div>
+              <h3>Linux Vulnerabilities</h3>
+              <h2>8194</h2><h4>vulnerabilities</h4>
+              <div class="value"></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 mb-4">
+          <a href="route4" class="widget-tile">
+            <div>
+              <h3>Cisa Vulnerabilities</h3>
+              <div class="value"></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 mb-4">
+          <a href="/threatdashboard" class="widget-tile">
+            <div>
+              <h3>Threat Levels</h3>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 mb-4">
+          <a href="/notsysinfo" class="widget-tile">
+            <div>
+              <h3>Not on SysInfo</h3>
+              <!--<div class="value">{{ notsysinfocount }}</div>-->
+              <!--<div id="graph-container">
+                {{ sysinfo_data | safe }}
+              </div> -->
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 mb-4">
+          <a href="/FullVul" class="widget-tile">
+            <div>
+              <h3>0 < 30 days</h3>
+              <div class="value"></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 mb-4">
+          <a href="/FullVul" class="widget-tile">
+            <div>
+              <h3>30 - 60 days</h3>
+              <div class="value"></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 mb-4">
+          <a href="/FullVul" class="widget-tile">
+            <div>
+              <h3>60 - 90 days</h3>
+              <div class="value"></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 mb-4">
+          <a href="/FullVul" class="widget-tile">
+            <div>
+              <h3>90 - 180 days</h3>
+              <div class="value"></div>
+            </div>
+          </a>
+        </div>
+        <div class="col-md-4 mb-4">
+          <a href="/vultypes" class="widget-tile">
+            <div>
+              <h3>Vulnerability Types</h3>
+              <p>(CisKnown, External, Internal)</p>
+            </div>
+          </a>
+        </div>
+        
+        <div class="col-md-4 mb-4">
+          <a href="/top20" class="widget-tile">
+            <div>
+              <h3>Top 20 Vulnerabilities</h3>
+            </div>
+          </a>
+        </div>
+      
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

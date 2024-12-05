@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Over Time</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-dark text-white">
+    <div class="container py-5">
+        <h1 class="text-center">Sales Over Time</h1>
+        <hr class="bg-white">
+        <div class="row my-5">
+            <div class="col">
+                <h3>Average Consumer Spending Over Time</h3>
+                <div>{{ sales_over_time | safe }}</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

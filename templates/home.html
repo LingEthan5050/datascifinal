@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer Spending Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #2b2e33;
+            color: #d1d1d1;
+            font-family: 'Roboto', sans-serif;
+        }
+        .dashboard-header {
+            background-color: #3a3f45;
+            color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .dashboard-header h1 {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .dashboard-header p {
+            font-size: 1.1rem;
+        }
+        .dashboard-card {
+            background-color: #3a3f45;
+            border: none;
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            color: inherit;
+            text-decoration: none;
+            display: block;
+            height: 100%;
+            padding: 20px;
+        }
+        .dashboard-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            text-decoration: none;
+        }
+        .dashboard-card h4 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .dashboard-card p {
+            font-size: 0.9rem;
+            color: #aaaaaa;
+        }
+        .card-container {
+            height: 100%; /* Ensure the clickable area spans the entire card container */
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="dashboard-header mb-5">
+            <h1>Consumer Spending Dashboard</h1>
+            <p>Analyze spending trends, seasonal patterns, and anomalies in a sleek and intuitive interface.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 my-3">
+                <div class="card-container">
+                    <a href="/total_entries" class="dashboard-card">
+                        <h4>Total Entries</h4>
+                        <p>Explore the total dataset entries.</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 my-3">
+                <div class="card-container">
+                    <a href="/sales_time" class="dashboard-card">
+                        <h4>Sales Over Time</h4>
+                        <p>View trends in average consumer spending over time.</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 my-3">
+                <div class="card-container">
+                    <a href="/distribution" class="dashboard-card">
+                        <h4>Spending Distribution</h4>
+                        <p>Analyze category-based spending distribution.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 my-3">
+                <div class="card-container">
+                    <a href="/seasonal" class="dashboard-card">
+                        <h4>Seasonal Trends</h4>
+                        <p>Discover seasonal spending trends.</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 my-3">
+                <div class="card-container">
+                    <a href="/anomalies" class="dashboard-card">
+                        <h4>Anomalies</h4>
+                        <p>Identify anomalies in consumer spending patterns.</p>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 my-3">
+                <div class="card-container">
+                    <a href="/download" class="dashboard-card">
+                        <h4>Download Data</h4>
+                        <p>Export the filtered dataset as a CSV file.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

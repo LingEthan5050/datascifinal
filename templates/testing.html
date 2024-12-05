@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consumer Spending Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-dark text-white">
+    <div class="container py-5">
+        <h1 class="text-center">Consumer Spending Dashboard</h1>
+        <hr class="bg-white">
+
+        <!-- Total Entries -->
+        <div class="row my-3">
+            <div class="col text-center">
+                <h3>Total Data Entries</h3>
+                <p class="lead">{{ total_entries }}</p>
+            </div>
+        </div>
+
+        <!-- Sales Over Time Chart -->
+        <div class="row my-5">
+            <div class="col">
+                <h3>Average Consumer Spending Over Time</h3>
+                <div>{{ sales_over_time | safe }}</div>
+            </div>
+        </div>
+
+        <!-- Spending Distribution Chart -->
+        <div class="row my-5">
+            <div class="col">
+                <h3>Spending Distribution by Category</h3>
+                <div>{{ spending_distribution | safe }}</div>
+            </div>
+        </div>
+
+        <!-- Seasonal Trends -->
+        <div class="row my-5">
+            <div class="col">
+                <h3>Seasonal Trends in Consumer Spending</h3>
+                <div>{{ seasonal_trends | safe }}</div>
+            </div>
+        </div>
+
+        <!-- Anomalies Chart -->
+        <div class="row my-5">
+            <div class="col">
+                <h3>Anomalies in Consumer Spending</h3>
+                <div>{{ anomalies_chart | safe }}</div>
+            </div>
+        </div>
+
+        <!-- Export Data -->
+        <div class="row my-5">
+            <div class="col text-center">
+                <a href="/download" class="btn btn-primary">Download Filtered Data</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
