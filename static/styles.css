@@ -1,0 +1,91 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #2E2E3E; /* UPS Brown */
+    color: #000; /* Text color for better contrast */
+    overflow-y: scroll; /* Enable vertical scrolling */
+}
+.content-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.table-container {
+    background-color: white; /* Table background */
+    flex: 1;
+    padding: 20px;
+    padding-bottom: 80px; /* Increased padding to make more space for pagination */
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+.bootstrap-table .fixed-table-toolbar {
+    background-color: white;
+    padding: 10px 15px;
+    border-bottom: 1px solid #dee2e6;
+}
+.fixed-table-container {
+    background-color: white; /* Table background */
+    width: 100%; /* Full width */
+}
+.text-overflow {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 200px;
+}
+.expandable {
+    cursor: pointer;
+    color: inherit; /* Remove hyperlink color */
+    text-decoration: none; /* Remove underline */
+}
+.container-fluid {
+    padding: 0;
+}
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 24px;
+    color: #FFFFFF; 
+    cursor: pointer;
+}
+h2.text-center.mt-3 {
+    color: #ffffff; /* Yellowish gold color */
+}
+.button-container {
+    display: flex;
+    gap: 10px;
+    margin: 10px; /* Reduced margin for smaller button */
+}
+.toggle-button {
+    background-color: #d4af37; /* Yellowish gold color */
+    border: none;
+    color: white;
+    padding: 5px 10px; /* Reduced padding for smaller button */
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px; /* Smaller font size */
+    margin: 10px 0;
+}
+.toggle-button:focus {
+    outline: none;
+}
+#graph-container, #testing-container {
+    width: 100%;
+    height: 80vh; /* Increased height to make the graph bigger */
+    background-color: #2E2E3E;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px; /* Increased padding for more spacing */
+    box-sizing: border-box; /* Include padding in height and width calculations */
+}
+#graph-container > div {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
